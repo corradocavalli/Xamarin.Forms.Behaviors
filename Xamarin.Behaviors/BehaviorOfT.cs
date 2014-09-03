@@ -4,7 +4,7 @@
 	using Xamarin.Forms;
 
 	/// <summary>
-	/// Represents a behavior that can be attached only to elements of type T
+	/// Represents a behavior that can be attached only to elements of type <T>
 	/// </summary>
 	/// <typeparam name="T">The type of the element that behavior can be attached to</typeparam>
 	public abstract class Behavior<T> : Behavior where T : BindableObject
