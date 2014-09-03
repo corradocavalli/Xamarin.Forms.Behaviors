@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+					   x:Class="Xamarin.Behaviors.Demo.Views.MainView">
+	<StackLayout>
+		<Entry Placeholder="Enter Firstname" >
+			<b:Interaction.Behaviors>
+				<b:BehaviorCollection>
+					<b:TextChangedBehavior Text="{Binding FirstName, Mode=TwoWay}" />
+					<b:EventToCommand EventName="Unfocused" Command="{Binding UnfocusedCommand}" CommandParameter="FirstName" />
+				</b:BehaviorCollection>
+			</b:Interaction.Behaviors>
+		</Entry>
+
+		<Entry  Placeholder="Enter Lastname" >
+			<b:Interaction.Behaviors>
+				<b:BehaviorCollection>
+					<b:TextChangedBehavior Text="{Binding LastName, Mode=TwoWay}" />
+					<b:EventToCommand EventName="Unfocused" Command="{Binding UnfocusedCommand}" CommandParameter="LastName" />
+				</b:BehaviorCollection>
+			</b:Interaction.Behaviors>
+		</Entry>
+
+		<Button Text="Ok" Command="{Binding TestCommand}" />
+		<Label Text="{Binding Message}" />
+		<Label Text="{Binding WelcomeMessage}" />
+		
+	</StackLayout>
+</ContentPage>
