@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
@@ -8,12 +9,21 @@ namespace Xamarin.Behaviors.Demo.ViewModels
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		private string firstName = "Nome";
-		private string lastName = "Cognome";
+		private string firstName = "FirstName";
+		private string lastName = "LastName";
 		private Command testCommand;
 		private Command<object> unfocusedCommand;
 		private string message;
 		private string welcomeMessage;
+		private Command<string> nickSelectedCommand;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MainViewModel"/> class.
+		/// </summary>
+		public MainViewModel()
+		{
+			this.Items = new ObservableCollection<Item>() { new Item() { NickName = "corcav" }, new Item() { NickName = "foo99" }, new Item() { NickName = "bar76" } };
+		}
 
 		/// <summary>
 		/// Gets or sets FirstName property
@@ -138,6 +148,26 @@ namespace Xamarin.Behaviors.Demo.ViewModels
 					 }));
 			}
 		}
+
+		public Command<string> NickSelectedCommand
+		{
+			get
+			{
+				return this.nickSelectedCommand ?? (this.nickSelectedCommand = new Command<string>(
+					 (param) =>
+					 {
+						 this.Message = string.Format("Item {0} selected", param);
+					 },
+					 (param) =>
+					 {
+						 // CanExecute delegate
+						 return true;
+					 }));
+			}
+		}
+
+
+		public ObservableCollection<Item> Items { get; private set; }
 
 
 		protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)

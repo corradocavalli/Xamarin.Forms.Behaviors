@@ -1,5 +1,6 @@
 ﻿
 using Xamarin.Behaviors.Demo.ViewModels;
+using Xamarin.Forms;
 
 namespace Xamarin.Behaviors.Demo.Views
 {
@@ -9,6 +10,8 @@ namespace Xamarin.Behaviors.Demo.Views
 		{
 			InitializeComponent();
 			this.BindingContext = new MainViewModel();
+
+
 		}
 	}
 }

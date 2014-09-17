@@ -40,6 +40,7 @@
     <Compile Include="Behavior.cs" />
     <Compile Include="BehaviorCollection.cs" />
     <Compile Include="BehaviorOfT.cs" />
+    <Compile Include="Extensions\RelativeContextExtension.cs" />
     <Compile Include="IBehavior.cs" />
     <Compile Include="Interaction.cs" />
     <Compile Include="Library\EventToCommand.cs" />
