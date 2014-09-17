@@ -11,7 +11,7 @@ namespace Xamarin.Behaviors.Demo.Views
 			InitializeComponent();
 			this.BindingContext = new MainViewModel();
 
-
+			
 		}
 	}
 }

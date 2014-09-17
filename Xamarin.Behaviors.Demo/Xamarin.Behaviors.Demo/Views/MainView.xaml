@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 						xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
-					   x:Class="Xamarin.Behaviors.Demo.Views.MainView">
+					   x:Class="Xamarin.Behaviors.Demo.Views.MainView"
+						x:Name="MainPage">
 	<StackLayout>
 		<Entry Placeholder="Enter Firstname" >
 			<b:Interaction.Behaviors>
@@ -17,7 +18,11 @@
 			<b:Interaction.Behaviors>
 				<b:BehaviorCollection>
 					<b:TextChangedBehavior Text="{Binding LastName, Mode=TwoWay}" />
-					<b:EventToCommand EventName="Unfocused" Command="{Binding UnfocusedCommand}" CommandParameter="LastName" />
+					<b:EventToCommand BindingContext="{b:RelativeContext MainPage}" 
+											EventName="Unfocused" 
+											
+										Command="{Binding UnfocusedCommand}"
+										CommandParameter="LastName" />
 				</b:BehaviorCollection>
 			</b:Interaction.Behaviors>
 		</Entry>
@@ -25,6 +30,34 @@
 		<Button Text="Ok" Command="{Binding TestCommand}" />
 		<Label Text="{Binding Message}" />
 		<Label Text="{Binding WelcomeMessage}" />
+
+		<ListView ItemsSource="{Binding Items}"
+					 IsGroupingEnabled="false"
+					 RowHeight="60">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="10" >
+							<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" Spacing="-50"  >
+								<Button Text="{Binding NickName}">
+									<b:Interaction.Behaviors>
+										<b:BehaviorCollection>
+											<b:EventToCommand CommandNameContext="{b:RelativeContext MainPage}"
+																	EventName="Clicked"
+																	CommandName="NickSelectedCommand"
+																	CommandParameter="{Binding NickName}" />
+										</b:BehaviorCollection>
+									</b:Interaction.Behaviors>
+								</Button>
+								
+							</StackLayout>
+						</StackLayout>
+
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		
 		
 	</StackLayout>
 </ContentPage>
