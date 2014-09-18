@@ -5,4 +5,4 @@ Xamarin Forms Behaviors is a "tentative" porting of core Blend behaviors infrast
 
 Read about how to use this package here: http://bit.ly/xamarinbehaviors
 
-What's new in v 1.1.0: http://codeworks.it/blog/?p=216 (introduces Relative Commanding in EventToComman behavior)
+What's new in v 1.1.0: http://codeworks.it/blog/?p=216 (introduces Relative Commanding in EventToCommand behavior)
