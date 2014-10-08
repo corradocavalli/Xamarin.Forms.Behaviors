@@ -19,6 +19,5 @@ Fixed bugs and added Relative Commanding support to EventToCommand behavior, det
 Use Git repo for feedback and issues.
 
 Cheers
-
 Corrado
 
