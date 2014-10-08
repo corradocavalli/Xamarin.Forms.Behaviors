@@ -28,6 +28,7 @@ namespace Xamarin.Behaviors.Demo.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			Xamarin.Forms.Forms.Init();
+			Xamarin.Behaviors.Infrastructure.Init();
 
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
 

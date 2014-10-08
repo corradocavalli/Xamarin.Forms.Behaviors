@@ -84,6 +84,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Xamarin.Behaviors\Xamarin.Behaviors.csproj">
+      <Project>{c10d28a1-fa73-4823-b829-c1353d213efc}</Project>
+      <Name>Xamarin.Behaviors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Xamarin.Behaviors.Demo\Xamarin.Behaviors.Demo.csproj">
       <Project>{ab7040ad-4197-4f41-abca-54990a337744}</Project>
       <Name>Xamarin.Behaviors.Demo</Name>
