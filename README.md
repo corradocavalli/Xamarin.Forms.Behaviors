@@ -1,17 +1,22 @@
 Xamarin.Forms.Behaviors
 =======================
 
-Xamarin Forms Behaviors is a "tentative" porting of core Blend behaviors infrastructure to Xamarin Forms Platform
+Xamarin Forms Behaviors is the porting of core Blend behaviors infrastructure to Xamarin Forms Platform,
+you can read about initial version here: http://bit.ly/xamarinbehaviors
 
-Read about how to use this package here: http://bit.ly/xamarinbehaviors
+==Updates==
 
-What's new in v 1.1.0: http://codeworks.it/blog/?p=216 (introduces Relative Commanding in EventToCommand behavior)
+* version 1.2.0 *
+In order to have Behaviors working in iOS project you have to add following line to iOS project's AppDelegate class 
+just after Xamarin.Forms.Forms.Init() method. Android and Windows Phone don't need it.
+More info about this requirement here: http://codeworks.it/blog/?p=242
 
-*** Version 1.2.0 ***
-In order to have behaviors working in iOS projects you have to add following line into iOS project's AppDelegate class 
-just after Xamarin.Forms.Forms.Init() method.
+* version 1.1.0 *
+Fixed bugs and added Relative Commanding support to EventToCommand behavior, details here: http://codeworks.it/blog/?p=216
 
-Xamarin.Behaviors.Infrastructure.Init();
 
-For more info why this call is needed read here: http://codeworks.it/blog/?p=242
+Use Git repo for feedback and issues.
+
+Cheers
+Corrado
 
