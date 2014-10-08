@@ -28,6 +28,8 @@ namespace Xamarin.Behaviors.Demo.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			Xamarin.Forms.Forms.Init();
+
+			//Added to prevent iOS linker to strip behaviors assembly out of deployed package.
 			Xamarin.Behaviors.Infrastructure.Init();
 
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
