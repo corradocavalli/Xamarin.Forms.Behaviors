@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace Xamarin.Behaviors.Demo
 {
-	public class App
+	public class App : Application
 	{
-		public static Page GetMainPage()
+		public App()
 		{
-			return new MainView();
+			this.MainPage = new MainView();
 		}
 	}
 }

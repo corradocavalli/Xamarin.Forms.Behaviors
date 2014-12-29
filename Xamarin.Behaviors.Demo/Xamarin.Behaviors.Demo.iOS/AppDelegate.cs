@@ -9,14 +9,14 @@ using Xamarin.Forms;
 
 namespace Xamarin.Behaviors.Demo.iOS
 {
+	using Forms.Platform.iOS;
+
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 
 	// application events from iOS.
 	[Register("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : FormsApplicationDelegate
 	{
-		// class-level declarations
-		UIWindow window;
 
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -32,13 +32,9 @@ namespace Xamarin.Behaviors.Demo.iOS
 			//Added to prevent iOS linker to strip behaviors assembly out of deployed package.
 			Xamarin.Behaviors.Infrastructure.Init();
 
-			window = new UIWindow(UIScreen.MainScreen.Bounds);
+			LoadApplication(new App());
 
-			window.RootViewController = App.GetMainPage().CreateViewController();
-
-			window.MakeKeyAndVisible();
-
-			return true;
+			return base.FinishedLaunching(app, options);
 		}
 	}
 }
