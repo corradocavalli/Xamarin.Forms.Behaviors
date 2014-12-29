@@ -6,6 +6,9 @@ you can read about initial version here: http://bit.ly/xamarinbehaviors
 
 Updates
 =======
+* version 1.3.0 Please select branch Version 1.3
+Project updated to Xamarin Forms v 1.3.0.0
+
 
 * version 1.2.0
 In order to have Behaviors working in iOS project you have to add following line to iOS project's AppDelegate class 
