@@ -6,6 +6,10 @@ you can read about initial version here: http://bit.ly/xamarinbehaviors
 
 Updates
 =======
+
+*IMPORTANT NOTE-PLEASE READ*
+This project has moved here: https://github.com/corradocavalli/Corcav.Behaviors this version will no longer be maintained.
+
 * version 1.3.0 Please select branch Version 1.3
 Project updated to Xamarin Forms v 1.3.0.0
 
