@@ -13,7 +13,7 @@ namespace Xamarin.Behaviors
 		public virtual BindableObject AssociatedObject
 		{
 			get;
-			private set; 
+			private set;
 		}
 
 		public virtual void Detach()
